@@ -40,8 +40,10 @@ jobs:
       - name: Launch Web Service
         run: docker compose up -d
 
-      - name: Poll server
+      - name: Give permission
         run: chmod +x wait-for-webserver.sh
+      
+      - name: Poll server
         run: ./wait-for-webserver.sh
 
       - name: Run Selenium Tests
